@@ -1,6 +1,7 @@
 package com.example.questapi.repository
 
 import com.example.questapi.model.Mahasiswa
+import com.example.questapi.service.MahasiswaService
 
 
 interface MahasiswaRepository {
