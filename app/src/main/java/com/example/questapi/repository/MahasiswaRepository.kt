@@ -9,7 +9,7 @@ interface MahasiswaRepository {
     suspend fun insertMahasiswa(mahasiswa: Mahasiswa)
     suspend fun updateMahasiswa(nim: String, mahasiswa: Mahasiswa)
     suspend fun deleteMahasiswa(nim: String)
-    suspend fun getMahasiswaById(nim: String): Mahasiswa
+    suspend fun getMahasiswaByNim(nim: String): Mahasiswa
 }
 
 
@@ -43,7 +43,7 @@ class NetworkMahasiswaRepository(private val mahasiswaService: MahasiswaService)
 
 
     override suspend fun getMahasiswa(): List<Mahasiswa> = mahasiswaService.getMahasiswa()
-    override suspend fun getMahasiswaById(nim: String): Mahasiswa {
+    override suspend fun getMahasiswaByNim(nim: String): Mahasiswa {
         return mahasiswaService.getMahasiswaById(nim)
     }
 }

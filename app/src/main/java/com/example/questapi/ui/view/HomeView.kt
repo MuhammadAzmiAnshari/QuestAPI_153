@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
@@ -128,7 +129,7 @@ fun OnLoading(modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Image(
             modifier = Modifier.size(200.dp),
-            painter = painterResource(R.drawable.no_wifi),
+            painter = painterResource(R.drawable.ic_launcher_foreground),
             contentDescription = stringResource(R.string.loading)
         )
     }
@@ -142,7 +143,7 @@ fun OnError(retryAction: () -> Unit, modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.Center,
             modifier = Modifier.padding(16.dp)
         ) {
-            Image(painter = painterResource(id = R.drawable.ic_launcher_background), contentDescription = "")
+            Image(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = "")
             Text(text = stringResource(R.string.loading), style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(16.dp))
             Button(onClick = retryAction) {
                 Text(stringResource(R.string.retry))

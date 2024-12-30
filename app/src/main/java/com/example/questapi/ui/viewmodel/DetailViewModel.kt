@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.questapi.model.Mahasiswa
 import com.example.questapi.repository.MahasiswaRepository
+import com.example.questapi.ui.view.DestinasiDetail
 import kotlinx.coroutines.launch
 
 class DetailViewModel(
@@ -27,7 +28,7 @@ class DetailViewModel(
         viewModelScope.launch {
             detailUiState = DetailUiState(isLoading = true)
             try {
-                val result = mahasiswaRepository.getMahasiswaById(nim)
+                val result = mahasiswaRepository.getMahasiswaByNim(nim)
                 detailUiState = DetailUiState(
                     detailUiEvent = result.toDetailUiEvent(),
                     isLoading = false

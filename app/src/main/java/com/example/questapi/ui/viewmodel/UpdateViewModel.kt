@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.questapi.model.Mahasiswa
 import com.example.questapi.repository.MahasiswaRepository
+import com.example.questapi.ui.view.DestinasiUpdate
 import kotlinx.coroutines.launch
 
 class UpdateViewModel (
@@ -21,7 +22,7 @@ class UpdateViewModel (
 
     init {
         viewModelScope.launch {
-            updateUiState = mhs.getMahasiswaById(_nim)
+            updateUiState = mhs.getMahasiswaByNim(_nim)
                 .toUiStateMhs()
         }
     }
